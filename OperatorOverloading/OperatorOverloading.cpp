@@ -16,7 +16,7 @@ class Vector2 {
     Vector2 operator+() {
       return *this;
     }
-    Vector2 operator+(Vector2 v) {
+    Vector2 operator+(const Vector2& v) {
       return Vector2(this -> x + v.x, this -> y + v.y);
     }
     Vector2 operator++() {
@@ -28,16 +28,16 @@ class Vector2 {
     Vector2 operator-() {
       return Vector2(-x, -y);
     }
-    int operator*(Vector2 v) {
+    int operator*(const Vector2& v) {
       return int(this -> x * v.x + this -> y * v.y);
     }
-    Vector2 operator*(int n) {
+    Vector2 operator*(const int& n) {
       return Vector2(this -> x * n, this -> y * n);
     }
-    friend Vector2 operator*(int n, Vector2 v);
+    friend Vector2 operator*(const int& n, const Vector2& v);
 };
 
-Vector2 operator*(int n, Vector2 v) {
+Vector2 operator*(const int& n, const Vector2& v) {
   return Vector2(n * v.x, n * v.y);
 }
 
