@@ -1,6 +1,6 @@
 # Programming Design
 
-後期プログラミング設計のレポジトリ
+後期プログラミング設計のリポジトリ
 
 # Installation
 
