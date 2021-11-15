@@ -4,25 +4,26 @@
 #include <algorithm>
 using namespace std;
 
+template<class T>
 class Score {
   private:
-    vector<int> subscore;
+    vector<T> subscore;
   public:
-    void set(const vector<int>& s) {
+    void set(const vector<T>& s) {
       subscore = s;
     }
-    vector<int>& get() {
+    vector<T>& get() {
       return subscore;
     }
-    int total() const {
-      int result = 0;
+    T total() const {
+      T result = 0;
       for (auto it = subscore.begin(); it != subscore.end(); it++) {
         result += *it;
       }
       return  result;
     }
     bool operator<(const Score& s) const {
-      int result = 0;
+      T result = 0;
       for(auto it = subscore.begin(); it != subscore.end(); it++) {
         result += *it;
       }
@@ -32,7 +33,7 @@ class Score {
       return false;
     }
     void show() {
-      int result = 0;
+      T result = 0;
       for(auto it = subscore.begin(); it != subscore.end(); it++) {
         result += *it;
         cout << *it << " ";
@@ -51,10 +52,10 @@ int main() {
   cin >> nplayer;
   cout << "評価項目の数：";
   cin >> nsubscore;
-  vector<Score> players;
+  vector<Score<double>> players;
   for(int i = 0; i < nplayer; i++) {
-    Score player;
-    vector<int> s;
+    Score<double> player;
+    vector<double> s;
     for(int j = 0; j < nsubscore; j++) {
       s.push_back(sr(mt));
     }
