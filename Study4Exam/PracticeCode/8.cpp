@@ -12,8 +12,8 @@ int main() {
     palin.push_back(str[i]);
   }
   reverse(palin.begin(), palin.end());
-  for(int i = 0; i < palin.size(); i++) {
-    cout << palin[i];
+  for(auto it = palin.begin(); it != palin.end(); it++) {
+    cout << *it;
   }
   cout << endl;
 }
