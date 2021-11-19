@@ -17,8 +17,9 @@ class Minute {
     }
     friend Minute operator+(const int& i, const Minute& m);
     Minute operator++(int dummy) {
+      Minute tmp = *this;
       minute++;
-      return *this;
+      return tmp;
     }
     operator int() {
       return minute;
