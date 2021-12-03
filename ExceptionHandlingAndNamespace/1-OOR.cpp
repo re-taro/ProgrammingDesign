@@ -16,5 +16,6 @@ int main(void) {
   }
   catch (const exception& e) {
     cout << e.what() << endl;
+    return -1;
   }
 }
