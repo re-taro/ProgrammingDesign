@@ -19,7 +19,7 @@ class Date {
       }
       day = d;
     }
-    string format() {
+    string format(void) {
       return to_string(month) + "月" + to_string(day) + "日";
     }
 };
