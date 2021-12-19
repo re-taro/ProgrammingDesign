@@ -10,7 +10,7 @@ int main(void) {
   string value;
   while (true) {
     getline(cin, value);
-    if ( value.length()) {
+    if (value.length()) {
       data = stod(value);
       file << data << endl;
       continue;
