@@ -10,13 +10,9 @@ int main(void) {
   string sentence = "Department of Electronic and Information Engineering";
   stringstream tmp;
   tmp << sentence;
-  while (true) {
-    if (!tmp.eof()) {
-      string element;
-      tmp >> element;
-      file << element << endl;
-      continue;
-    }
-    break;
+  while (!tmp.eof()) {
+    string element;
+    tmp >> element;
+    file << element << endl;
   }
 }
