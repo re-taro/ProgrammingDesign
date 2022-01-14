@@ -1,6 +1,6 @@
 TARGET = main
 
-SRCS   = $(TARGET).cpp App.cpp Timer.cpp Rand.cpp BallApp.cpp Ball.cpp
+SRCS   = $(TARGET).cpp App.cpp Timer.cpp Rand.cpp BallApp.cpp Ball.cpp TextureManager.cpp
 OBJS   = $(SRCS:%.cpp=%.o)
 ## for macOS (SFML: brew)
 #CXX    = clang++
@@ -18,7 +18,7 @@ $(TARGET): $(OBJS)
 	strip $@
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) -c $(INCLUDES) $< 
+	$(CXX) $(CXXFLAGS) -c $(INCLUDES) $<
 
 .PHONY: clean
 

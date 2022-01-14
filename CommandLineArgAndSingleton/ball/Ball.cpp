@@ -1,6 +1,7 @@
 #include "Ball.h"
 #include "Rand.h"
 #include "BallApp.h"
+#include "TextureManager.h"
 
 Ball::Ball()
 {
@@ -22,8 +23,7 @@ void Ball::init()
   ax = 0;
   ay = 0;
 
-  texture = new sf::Texture;
-  texture->loadFromFile("bomb.png");
+  texture = TextureManager::getInstance()->get("bomb.png");
 
   sprite.setTexture(*texture);
   auto size = texture->getSize()/2u;
@@ -36,7 +36,7 @@ void Ball::update()
 {
   double dt = rap.get();
   rap.reset();
-  
+
   vx += ax * dt;
   vy += ay * dt;
   x += vx * dt;
