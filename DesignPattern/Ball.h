@@ -14,7 +14,12 @@ protected:
   sf::Texture* texture;
   sf::Sprite sprite;
 
- public:
+public:
+  enum class TYPE {
+    BASKET,
+    BASE,
+    TENNIS
+  };
   Ball();
   virtual ~Ball();
 
