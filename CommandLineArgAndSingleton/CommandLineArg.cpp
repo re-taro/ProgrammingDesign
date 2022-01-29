@@ -1,11 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include<stdexcept>
 using namespace std;
-
-class fs_error: public logic_error {
-  public:
-    fs_error(const string& what_arg): logic_error(what_arg) {}
-};
 
 int main(int argc, char* argv[]) {
   try {
@@ -15,8 +11,8 @@ int main(int argc, char* argv[]) {
     ifstream in(argv[1]);
     ofstream out(argv[2]);
     string tmp;
-    if (in.fail() || out.fail()) {
-      throw fs_error("file couldn't open");
+    if (in.fail() | out.fail()) {
+      throw logic_error("file couldn't open");
     }
     while (!in.eof()) {
       getline(in, tmp);
