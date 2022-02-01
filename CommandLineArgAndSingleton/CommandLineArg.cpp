@@ -14,10 +14,7 @@ int main(int argc, char* argv[]) {
     if (in.fail() | out.fail()) {
       throw logic_error("file couldn't open");
     }
-    while (!in.eof()) {
-      getline(in, tmp);
-      out << tmp << endl;
-    }
+    out << in.rdbuf();
     in.close();
     out.close();
     return 0;
