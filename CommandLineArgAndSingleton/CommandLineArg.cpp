@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include<stdexcept>
+#include <stdexcept>
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -10,7 +10,6 @@ int main(int argc, char* argv[]) {
     }
     ifstream in(argv[1]);
     ofstream out(argv[2]);
-    string tmp;
     if (in.fail() | out.fail()) {
       throw logic_error("file couldn't open");
     }
