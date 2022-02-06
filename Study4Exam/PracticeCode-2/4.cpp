@@ -8,10 +8,8 @@ int main(void) {
   float total = 0.0f;
   ifstream in;
   in.open("data.txt");
-  while(true) {
+  while(!in.eof()) {
     in >> n >> w;
-    if (in.eof())
-      break;
     total += static_cast<float>(n*w);
   }
   ofstream out;
